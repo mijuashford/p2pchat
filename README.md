@@ -18,9 +18,9 @@ Apri `http://localhost:3000`.
 - Per reti NAT difficili potrebbe servire un TURN server (non incluso).
 - Codice semplice e modulare: `public/app.js` è il client; `server.js` è il signaling.
 
-## Modalità manuale (QR)
+## Modalità manuale
 
-Dal client puoi scegliere **Manuale (QR)** per uno scambio 1:1 senza server di signaling:
+Dal client puoi scegliere **Manuale** per uno scambio 1:1 senza server di signaling:
 - Un peer genera l’offerta e la condivide (QR o testo).
 - L’altro peer usa l’offerta e genera la risposta.
 - Il primo peer applica la risposta.
