@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>P2P Chat</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="panel" id="join">
+        <h1>P2P Chat</h1>
+        <p class="hint">Nessun login. Inserisci un codice stanza e un username.</p>
+        <div class="mode">
+          <label class="radio">
+            <input type="radio" name="mode" value="server" checked />
+            Server (consigliato)
+          </label>
+          <label class="radio">
+            <input type="radio" name="mode" value="manual" />
+            Manuale (QR)
+          </label>
+        </div>
+        <label id="roomLabelWrap">
+          Codice stanza
+          <input id="room" placeholder="es. 42-AB" autocomplete="off" />
+        </label>
+        <label>
+          Username
+          <input id="username" placeholder="es. miju" autocomplete="off" />
+        </label>
+        <button id="joinBtn">Entra</button>
+        <p class="small">Condividi lo stesso codice con il tuo amico.</p>
+      </section>
+
+      <section class="panel hidden" id="chat">
+        <header class="top">
+          <div>
+            <h2 id="roomLabel"></h2>
+            <div class="peers" id="peers"></div>
+          </div>
+          <button id="leaveBtn" class="ghost">Esci</button>
+        </header>
+
+        <section class="manual hidden" id="manualPanel">
+          <div class="manual-grid">
+            <div>
+              <h3>Manuale (QR)</h3>
+              <p class="hint">Usa uno scambio 1:1. Condividi l’offerta/risposta via copia/incolla.</p>
+              <div class="actions">
+                <button id="createOfferBtn">Genera offerta (inizio io)</button>
+                <button id="useOfferBtn" class="ghost">Usa offerta e genera risposta</button>
+                <button id="applyAnswerBtn" class="ghost">Applica risposta</button>
+              </div>
+              <label>
+                Segnale locale (da condividere)
+                <textarea id="localSignal" rows="5" readonly></textarea>
+              </label>
+            </div>
+            <div>
+              <label>
+                Segnale remoto (da incollare)
+                <textarea id="remoteSignal" rows="8" placeholder="Incolla qui il testo scansionato o copiato"></textarea>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <div class="messages" id="messages"></div>
+
+        <form id="form" class="composer">
+          <input id="message" placeholder="Scrivi un messaggio..." autocomplete="off" />
+          <button>Invia</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
